@@ -1,0 +1,47 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+
+@theme {
+  --color-main-bg:#FDFDFD;
+  /* Ibuki Colorful Theme */
+  --color-ibuki-grey: #f2f2f2;
+  --color-ibuki-blonde: #f2e1ac;
+  --color-ibuki-pink: #f294c0;
+  --color-ibuki-red: #a62d43;
+  --color-ibuki-darkred: #731728;
+  /* Ibuki Dark Theme */
+  --color-ibuki-dark: #3b3c40;
+  --color-ibuki-black: #222126;
+  /* Custom Font */
+  --font-jost: "Jost", sans-serif;
+}
+
+.hamburger-active > span > svg {
+  @apply rotate-90;
+}
+
+.navbar-fixed {
+  @apply fixed z-9999 backdrop-blur-[5px] border-b-2 lg:border-b-4 border-ibuki-blonde;
+}
+
+@layer components {
+  .grid-card-container {
+    @apply p-2 grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-4 md:p-4;
+  }
+
+  .grid-card-title {
+    @apply text-xl font-semibold text-slate-700 md:col-start-4 md:row-start-2 md:flex;
+  }
+
+  .grid-card-author {
+    @apply text-lg font-bold text-slate-600 md:col-start-2 md:row-start-2  md:flex;
+  }
+
+  .grid-card {
+    @apply bg-transparent aspect-4/3 md:aspect-3/4 xl:aspect-4/3 rounded-lg overflow-hidden shadow-xl hover:scale-95 transition-all duration-500 relative;
+  }
+
+  .grid-card-img {
+    @apply w-full h-full bg-cover bg-no-repeat group-hover:scale-125 transition-all duration-500 absolute;
+  }
+}
